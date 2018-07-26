@@ -1,0 +1,87 @@
+#ticTacToeBoard {
+    float: left;
+    position: relative;
+}
+
+#ticTacToeImg {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+#area1ImageSpot {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 0px;
+    left: 0px;
+}
+
+#area2ImageSpot {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 0px;
+    left: 205px;
+}
+
+#area3ImageSpot {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 0px;
+    left: 405px;
+}
+
+#area4ImageSpot {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 205px;
+    left: 0px;
+}
+
+#area5ImageSpot {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 205px;
+    left: 205px;
+}
+
+#area6ImageSpot {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 205px;
+    left: 405px;
+}
+
+#area7ImageSpot {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 405px;
+    left: 0px;
+}
+
+#area8ImageSpot {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 405px;
+    left: 205px;
+}
+
+#area9ImageSpot {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 405px;
+    left: 405px;
+}
+
+footer {
+    float: left;
+    clear: left;
+}
