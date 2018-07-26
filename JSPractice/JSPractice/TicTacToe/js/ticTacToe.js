@@ -5,16 +5,25 @@ $("#ticTacToeImg").click( function() {
 function checkForWin() {
     
 }
-
-function determineCurrentTurn() {
-    
+var turn = "Xturn";
+var currentTurn = turn =>  {
+    if (turn === "Xturn") {
+        turn = "Oturn";
+        return "O";
+    }
+    else {
+        turn = "Xturn";
+        return "X";
+    }
 }
 
 $("#area1Id").click( function() {
     console.log("Area 1 clicked");
     //$("#ticTacToeImg").append("<img id='circleImg' src='images/O.png' style='position: absolute;' alt='circleImg'/>");
     //$("#imgArea1").append("<img id='circleImg' src='images/O.png' alt='circleImg'/>");
-    $("#ticTacToeBoard").append("<img id='area1ImageSpot' src='images/O.png' alt='circleImg'/>");
+    currentTurn();
+    console.log(currentTurn());
+    $("#ticTacToeBoard").append("<img id='area1ImageSpot' src='images/" + currentTurn() + ".png' alt='circleImg'/>");
 });
 
 $("#area2Id").click( function() {
