@@ -1,7 +1,8 @@
+//Store default values for game progress
 var gameProgress = [
-        ["","",""],
-        ["","",""],
-        ["","",""]
+        ["1","2","3"],
+        ["4","5","6"],
+        ["7","8","9"]
     ];
 
 $("#ticTacToeImg").click( function() {
@@ -9,10 +10,36 @@ $("#ticTacToeImg").click( function() {
 });
 
 function checkForWin() {
-    
+    console.log(gameProgress[0][0] + " " + gameProgress[0][1] + " " + gameProgress[0][2]);
+    console.log(gameProgress[1][0] + " " + gameProgress[1][1] + " " + gameProgress[1][2]);
+    console.log(gameProgress[2][0] + " " + gameProgress[2][1] + " " + gameProgress[2][2]);
+    if (gameProgress[0][0] === gameProgress[0][1] && gameProgress[0][0] === gameProgress[0][2]) {
+        alert(gameProgress[0][0] + " wins!");
+    }
+    else if (gameProgress[1][0] === gameProgress[1][1] && gameProgress[1][0] === gameProgress[1][2]) {
+        alert(gameProgress[1][0] + " wins!");
+    }
+    else if (gameProgress[2][0] === gameProgress[2][1] && gameProgress[2][0] === gameProgress[2][2]) {
+        alert(gameProgress[2][0] + " wins!");
+    }
+    else if (gameProgress[0][0] === gameProgress[1][0] && gameProgress[0][0] === gameProgress[2][0]) {
+        alert(gameProgress[0][0] + " wins!");
+    }
+    else if (gameProgress[0][1] === gameProgress[1][1] && gameProgress[0][1] === gameProgress[2][1]) {
+        alert(gameProgress[0][1] + " wins!");
+    }
+    else if (gameProgress[0][2] === gameProgress[1][2] && gameProgress[0][2] === gameProgress[2][2]) {
+        alert(gameProgress[0][2] + " wins!");
+    }
+    else if (gameProgress[0][0] === gameProgress[1][1] && gameProgress[0][0] === gameProgress[2][2]) {
+        alert(gameProgress[0][0] + " wins!");
+    }
+    else if (gameProgress[2][0] === gameProgress[1][1] && gameProgress[2][0] === gameProgress[0][2]) {
+        alert(gameProgress[2][0] + " wins!");
+    }
 }
 
-//turn assigns itself once first move is placed
+//turn assigns itself once first move is placed and switches between X and O each time currentTurn() is called
 var currentTurn = turn =>  {
     console.log("Turn is: " + this.turn);
     if (this.turn === "Xturn") {
@@ -26,74 +53,64 @@ var currentTurn = turn =>  {
 }
 
 $("#area1Id").click( function() {
-    console.log("Area 1 clicked");
     var contentToFillSquare = currentTurn();
     $("#ticTacToeBoard").append("<img id='area1ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
     gameProgress[0][0] = contentToFillSquare;
-    console.log("Filling square 1 with: " + gameProgress[0][0]);
-    
+    checkForWin();
 });
 
 $("#area2Id").click( function() {
-    console.log("Area 2 clicked");
     var contentToFillSquare = currentTurn();
     $("#ticTacToeBoard").append("<img id='area2ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
     gameProgress[0][1] = contentToFillSquare;
-    console.log("Filling square 2 with: " + gameProgress[0][1]);
+    checkForWin();
 });
 
 $("#area3Id").click( function() {
-    console.log("Area 3 clicked");
     var contentToFillSquare = currentTurn();
     $("#ticTacToeBoard").append("<img id='area3ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
     gameProgress[0][2] = contentToFillSquare;
-    console.log("Filling square 3 with: " + gameProgress[0][2]);
+    checkForWin();
 });
 
 $("#area4Id").click( function() {
-    console.log("Area 4 clicked");
     var contentToFillSquare = currentTurn();
     $("#ticTacToeBoard").append("<img id='area4ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
     gameProgress[1][0] = contentToFillSquare;
-    console.log("Filling square 4 with: " + gameProgress[1][0]);
+    checkForWin();
 });
 
 $("#area5Id").click( function() {
-    console.log("Area 5 clicked");
     var contentToFillSquare = currentTurn();
     $("#ticTacToeBoard").append("<img id='area5ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
     gameProgress[1][1] = contentToFillSquare;
-    console.log("Filling square 5 with: " + gameProgress[1][1]);
+    checkForWin();
 });
 
 $("#area6Id").click( function() {
-    console.log("Area 6 clicked");
     var contentToFillSquare = currentTurn();
     $("#ticTacToeBoard").append("<img id='area6ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
     gameProgress[1][2] = contentToFillSquare;
-    console.log("Filling square 6 with: " + gameProgress[1][2]);
+    checkForWin();
 });
 
 $("#area7Id").click( function() {
-    console.log("Area 7 clicked");
     var contentToFillSquare = currentTurn();
     $("#ticTacToeBoard").append("<img id='area7ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
     gameProgress[2][0] = contentToFillSquare;
-    console.log("Filling square 7 with: " + gameProgress[2][0]);
+    checkForWin();
 });
 
 $("#area8Id").click( function() {
-    console.log("Area 8 clicked");
     var contentToFillSquare = currentTurn();
     $("#ticTacToeBoard").append("<img id='area8ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
     gameProgress[2][1] = contentToFillSquare;
-    console.log("Filling square 8 with: " + gameProgress[2][1]);
+    checkForWin();
 });
 
 $("#area9Id").click( function() {
-    console.log("Area 9 clicked");
     var contentToFillSquare = currentTurn();
     $("#ticTacToeBoard").append("<img id='area9ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
     gameProgress[2][2] = contentToFillSquare;
-    console.log("Filling square 9 with: " + gameProgress[2][2]);
+    checkForWin();
 });
