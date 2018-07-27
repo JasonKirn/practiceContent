@@ -40,6 +40,10 @@
             </map>
     </div>
     
+    <div id="restartButton">
+        <button class="restartBtn btn btn">Restart</button>
+    </div>
+    
     <footer>
         <hr>
             2018&copy; Kirn <br />

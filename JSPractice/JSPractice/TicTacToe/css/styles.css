@@ -81,6 +81,11 @@
     left: 405px;
 }
 
+#restartButton {
+    float: left;
+    clear: left;
+}
+
 footer {
     float: left;
     clear: left;

@@ -5,10 +5,6 @@ var gameProgress = [
         ["7","8","9"]
     ];
 
-$("#ticTacToeImg").click( function() {
-    alert("Clicked"); 
-});
-
 function checkForWin() {
     console.log(gameProgress[0][0] + " " + gameProgress[0][1] + " " + gameProgress[0][2]);
     console.log(gameProgress[1][0] + " " + gameProgress[1][1] + " " + gameProgress[1][2]);
@@ -54,63 +50,86 @@ var currentTurn = turn =>  {
 
 $("#area1Id").click( function() {
     var contentToFillSquare = currentTurn();
-    $("#ticTacToeBoard").append("<img id='area1ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
+    $("#ticTacToeBoard").append("<img id='area1ImageSpot' src='images/" + contentToFillSquare + ".png' alt='placedImg'/>");
     gameProgress[0][0] = contentToFillSquare;
     checkForWin();
 });
 
 $("#area2Id").click( function() {
     var contentToFillSquare = currentTurn();
-    $("#ticTacToeBoard").append("<img id='area2ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
+    $("#ticTacToeBoard").append("<img id='area2ImageSpot' src='images/" + contentToFillSquare + ".png' alt='placedImg'/>");
     gameProgress[0][1] = contentToFillSquare;
     checkForWin();
 });
 
 $("#area3Id").click( function() {
     var contentToFillSquare = currentTurn();
-    $("#ticTacToeBoard").append("<img id='area3ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
+    $("#ticTacToeBoard").append("<img id='area3ImageSpot' src='images/" + contentToFillSquare + ".png' alt='placedImg'/>");
     gameProgress[0][2] = contentToFillSquare;
     checkForWin();
 });
 
 $("#area4Id").click( function() {
     var contentToFillSquare = currentTurn();
-    $("#ticTacToeBoard").append("<img id='area4ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
+    $("#ticTacToeBoard").append("<img id='area4ImageSpot' src='images/" + contentToFillSquare + ".png' alt='placedImg'/>");
     gameProgress[1][0] = contentToFillSquare;
     checkForWin();
 });
 
 $("#area5Id").click( function() {
     var contentToFillSquare = currentTurn();
-    $("#ticTacToeBoard").append("<img id='area5ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
+    $("#ticTacToeBoard").append("<img id='area5ImageSpot' src='images/" + contentToFillSquare + ".png' alt='placedImg'/>");
     gameProgress[1][1] = contentToFillSquare;
     checkForWin();
 });
 
 $("#area6Id").click( function() {
     var contentToFillSquare = currentTurn();
-    $("#ticTacToeBoard").append("<img id='area6ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
+    $("#ticTacToeBoard").append("<img id='area6ImageSpot' src='images/" + contentToFillSquare + ".png' alt='placedImg'/>");
     gameProgress[1][2] = contentToFillSquare;
     checkForWin();
 });
 
 $("#area7Id").click( function() {
     var contentToFillSquare = currentTurn();
-    $("#ticTacToeBoard").append("<img id='area7ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
+    $("#ticTacToeBoard").append("<img id='area7ImageSpot' src='images/" + contentToFillSquare + ".png' alt='placedImg'/>");
     gameProgress[2][0] = contentToFillSquare;
     checkForWin();
 });
 
 $("#area8Id").click( function() {
     var contentToFillSquare = currentTurn();
-    $("#ticTacToeBoard").append("<img id='area8ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
+    $("#ticTacToeBoard").append("<img id='area8ImageSpot' src='images/" + contentToFillSquare + ".png' alt='placedImg'/>");
     gameProgress[2][1] = contentToFillSquare;
     checkForWin();
 });
 
 $("#area9Id").click( function() {
     var contentToFillSquare = currentTurn();
-    $("#ticTacToeBoard").append("<img id='area9ImageSpot' src='images/" + contentToFillSquare + ".png' alt='circleImg'/>");
+    $("#ticTacToeBoard").append("<img id='area9ImageSpot' src='images/" + contentToFillSquare + ".png' alt='placedImg'/>");
     gameProgress[2][2] = contentToFillSquare;
     checkForWin();
+});
+
+$(".restartBtn").on("click", function() {
+    $("#area1ImageSpot").remove();
+    $("#area2ImageSpot").remove();
+    $("#area3ImageSpot").remove();
+    $("#area4ImageSpot").remove();
+    $("#area5ImageSpot").remove();
+    $("#area6ImageSpot").remove();
+    $("#area7ImageSpot").remove();
+    $("#area8ImageSpot").remove();
+    $("#area9ImageSpot").remove();
+
+    gameProgress = [
+        ["1","2","3"],
+        ["4","5","6"],
+        ["7","8","9"]
+    ];
+    
+    //Make sure X starts in new game
+    if (currentTurn() === "X") {
+        currentTurn();
+    }
 });
