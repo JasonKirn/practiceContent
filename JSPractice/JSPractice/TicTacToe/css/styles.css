@@ -1,6 +1,13 @@
+h1, footer {
+    text-align:center;
+}
+
 #ticTacToeBoard {
-    float: left;
     position: relative;
+    display: block;
+    margin: auto;
+    /* same width as ticTacToeImg to center with display block and margin auto */
+    width: 600px;
 }
 
 #ticTacToeImg {
@@ -82,11 +89,7 @@
 }
 
 #restartButton {
-    float: left;
-    clear: left;
+    text-align: center;
 }
 
-footer {
-    float: left;
-    clear: left;
-}
+
